@@ -895,6 +895,7 @@ void Send06 (CLIENT* client)
 							}
 							rare_box_mult = val;
 							WriteGM ("GM %u (%s) has set the rare item box drop rate to %d%%", client->guildcard, Unicode_to_ASCII((unsigned short *)&client->character.name[4]), val*100);
+							SendB0 ("New value set.", client);
 							unsigned char mesg[] = "Rare item occurence rate in boxes is now ";
 							int i = strlen(mesg);
 							sprintf (&mesg[i], "%d%%", val*100);
