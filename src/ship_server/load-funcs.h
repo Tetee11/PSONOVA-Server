@@ -96,13 +96,26 @@ void LoadArmorParam()
 	}
 	FreeCSV ();
 	// Set up the stack table too.
-	for (ch=0;ch<0x09;ch++)
-	{
-		if (ch != 0x02)
-			stackable_table[ch] = 10;
-	}
-	stackable_table[0x10] = 99;
-
+	for (ch=0;ch<0x09;ch++) //monomates, trimates, etc (except techs)
+   	 {
+        if (ch != 0x02)
+            stackable_table[ch] = 10;
+    	}   
+   	 stackable_table[0x09] = 1; //scape dolls
+    	stackable_table[0x0A] = 99; //all grinders
+    	stackable_table[0x0B] = 99; //all materials
+    	stackable_table[0x0C] = 99; //various mag cells
+   	 stackable_table[0x0D] = 99; //enemy parts
+    	stackable_table[0x0E] = 99; //mag cells and combination items
+    	stackable_table[0x0F] = 99; //addslots 
+    	stackable_table[0x10] = 99; //photon drops, spheres and crystals
+    	stackable_table[0x11] = 99; //book of katana 1,2,3
+    	stackable_table[0x12] = 99; //weapons badges, cards and tickets
+    	stackable_table[0x13] = 99; //present
+    	stackable_table[0x14] = 99; //treats and more badges
+    	stackable_table[0x15] = 99; //event presents (xmas etc)
+    	stackable_table[0x16] = 99; //music disks
+    	stackable_table[0x17] = 99; //hunters report
 }
 
 void LoadWeaponParam()
